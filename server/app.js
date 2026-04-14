@@ -65,7 +65,9 @@ app.post('/skill', (req, res) => {
 });
 
 app.post('/skill/validation', (req, res) => res.json({ status: 'ok' }));
+app.get('/skill/validation', (req, res) => res.json({ status: 'ok' }));
 app.post('/skill/dictionary', (req, res) => res.json({ status: 'ok' }));
+app.get('/skill/dictionary', (req, res) => res.json({ status: 'ok' }));
 app.get('/health', (req, res) => res.json({ status: 'healthy' }));
 
 const PORT = process.env.PORT || 3000;
