@@ -78,3 +78,4 @@ ngrok http 5000
 - [ ]이미지/uploads/image.png 분석 (GPT-4 Vision)
 - [ ]음성 TTS 연동
 - [ ]사용자별 세션 관리
+# Deploy trigger
