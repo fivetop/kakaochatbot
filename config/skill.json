@@ -1,0 +1,33 @@
+{
+  "skill": {
+    "name": "AI 챗봇",
+    "description": "AI/LLM 기반 대화형 챗봇",
+    "ver": "1.0",
+    "phase": "production",
+    "private": false,
+    "skillList": [
+      {
+        "id": "main",
+        "name": "메인 스킬",
+        "description": "AI와 대화하는 스킬",
+        "enabled": true,
+        "dialogs": [
+          {
+            "id": "default",
+            "name": "기본 대화",
+            "description": "기본 대화 시나리오",
+            "initialScenario": {
+              "answer": "안녕하세요! AI 챗봇입니다. 무엇을 도와드릴까요?",
+              "trigger": {
+                "id": "welcome",
+                "name": "환영인사"
+              }
+            }
+          }
+        ]
+      }
+    ],
+    "utterances": [],
+    "responses": []
+  }
+}
