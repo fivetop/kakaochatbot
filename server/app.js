@@ -38,8 +38,10 @@ function findAnswer(message) {
 }
 
 app.post('/skill', (req, res) => {
+  console.log('=== REQUEST ===', JSON.stringify(req.body));
   const body = req.body;
   const message = body.action?.params?.name || body.userRequest?.utterance || '';
+  console.log('=== MESSAGE ===', message);
   const responseText = findAnswer(message);
   
   const result = {
