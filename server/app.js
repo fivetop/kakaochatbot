@@ -66,6 +66,32 @@ app.post('/skill', (req, res) => {
   res.json(result);
 });
 
+app.get('/skill', (req, res) => {
+  const message = req.query.message || '';
+  const responseText = findAnswer(message);
+  
+  const result = {
+    version: '2.0',
+    template: {
+      outputs: [
+        {
+          simpleText: {
+            text: responseText
+          }
+        }
+      ],
+      quickReplies: [
+        { label: '영업시간', action: 'message', messageText: '영업시간' },
+        { label: '주소', action: 'message', messageText: '주소' },
+        { label: '배송', action: 'message', messageText: '배송' },
+        { label: '환불', action: 'message', messageText: '환불' },
+        { label: '도움말', action: 'message', messageText: '도움말' }
+      ]
+    }
+  };
+  res.json(result);
+});
+
 app.post('/skill/validation', (req, res) => res.json({ status: 'ok' }));
 app.get('/skill/validation', (req, res) => res.json({ status: 'ok' }));
 app.post('/skill/dictionary', (req, res) => res.json({ status: 'ok' }));
