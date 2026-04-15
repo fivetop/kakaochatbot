@@ -39,7 +39,7 @@ function findAnswer(message) {
 
 app.post('/skill', (req, res) => {
   const body = req.body;
-  const message = body.userRequest?.utterance || '';
+  const message = body.action?.params?.name || body.userRequest?.utterance || '';
   const responseText = findAnswer(message);
   
   const result = {
